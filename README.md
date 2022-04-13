@@ -28,7 +28,7 @@ pyenv versions
 pyenv global 3.8.1
 
 # In the current directory, set the python version. This creates the file .python-version.
-pyenv local 3.9.10
+pyenv local 3.9.0
 
 # To see which python is currently being used.
 pyenv version
@@ -54,3 +54,19 @@ poetry help completions
 
 # Configure poetry to create virtual environments inside the project's root directory
 poetry config virtualenvs.in-project true
+
+With poetry installed, I can now create a python project. I will define a project catered for data science. poetry will install a virtual environment based on python 3.9.0, that I have already installed with pyenv. I will include data analytics libraries like pandas and scipy, along with jupyter notebook. In addition I will include the ML libraries scikit-learn and tensorflow. Finally, I will specify black and flake8 for formatting and style guiding.
+
+# Specify the python version for the local directory using pyenv
+pyenv local 3.9.0
+
+# Create a new project, and directory
+poetry new poetry_demo_project
+
+# Specify some libraries
+cd poetry_demo_project
+poetry add pandas numpy scipy tensorflow tensorflow-text matplotlib scikit-learn jupyter ipykernel
+
+# Specify some dev libraries
+poetry add --dev black flake8
+
